@@ -1,6 +1,6 @@
 """
-Selection Sort:
-----------------
+Selection Sort Algorithm:
+------------------------
 - Works by repeatedly finding the minimum element from the unsorted portion and moving it to the beginning.
 - Time complexity: O(n^2) in all cases.
 - Not suitable for large datasets due to its quadratic time complexity.
