@@ -3,6 +3,10 @@ QuickSort Algorithm:
 ------------------------
 - Quick Sort: Efficient sorting algorithm.
 - Works by selecting a 'pivot' element from the array and partitioning the other elements into two sub-arrays according to whether they are less than or greater than the pivot.
+
+- Select the Pivot Element
+- Elements to the left of Pivot are smaller
+- Elements to the right of Pivot are larger
 - The sub-arrays are then recursively sorted.
 - Time complexity: O(n log n) on average, O(n^2) in the worst case (rare).
 - Space complexity: O(log n) for the recursive call stack.
@@ -22,10 +26,10 @@ def partition(array, low, high):
     for j in range(low, high):
         if array[j] <= pivot:
             # If element smaller than pivot is found,
-
-            # swap it with the greater element pointed by i
+            
             i = i + 1
 
+            # swap it with the greater element pointed by i
             (array[i], array[j]) = (array[j], array[i])
 
     # Swap the pivot element with the greater element specified by i
