@@ -1,5 +1,5 @@
 """
-Insertion Merge Algorithm:
+Merge Sort Algorithm:
 ------------------------
 - Divide: Divide the list or array recursively into two halves until it can no more be divided.
 - Conquer: Each subarray is sorted individually using the merge sort algorithm.
@@ -7,9 +7,6 @@ Insertion Merge Algorithm:
 - Time complexity: O(nlogn) in all cases.
 - Space complexity: O(n), Additional space is required for the temporary array used during merging.
 - Merge sort has a worst-case time complexity of O(N logN), which means it performs well even on large datasets.
-
-li - leftindex
-ri - rightindex
 """
 
 
