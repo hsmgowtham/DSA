@@ -24,6 +24,19 @@ class LinkedList:
         current_node.next = new_node
         return
 
+    def insertAtPos(self, data, pos):
+        new_node = Node(data)
+        current_node = self.head
+        c = 1
+        while pos -1 != c:
+            current_node = current_node.next
+            c += 1
+        new_node.next = current_node.next
+        current_node.next = new_node
+        return
+        
+
+
     def printLL(self):
         current_node = self.head
         while current_node:
@@ -35,4 +48,5 @@ ll = LinkedList()
 ll.insertAtbeg(5)
 ll.insertAtbeg(6)
 ll.insertAtEnd(8)
+ll.insertAtPos(9,2)
 ll.printLL()
