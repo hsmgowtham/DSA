@@ -66,13 +66,12 @@ class LinkedList:
 
         current_node = self.head
         prev_node = None
-        
+
         while current_node.data != data:
             prev_node = current_node
             current_node = current_node.next
         prev_node.next = current_node.next
         return
-
 
 
 ll = LinkedList()
