@@ -73,6 +73,12 @@ class LinkedList:
         prev_node.next = current_node.next
         return
 
+    def remove_first_node(self):
+        if self.head:
+            self.head = self.head.next
+            return
+    
+    
 
 ll = LinkedList()
 ll.insertAtbeg(5)
@@ -83,4 +89,6 @@ ll.search(6)
 ll.search(8)
 ll.printLL()
 ll.remove_node(5)
+ll.printLL()
+ll.remove_first_node()
 ll.printLL()
