@@ -77,13 +77,24 @@ class LinkedList:
         if self.head:
             self.head = self.head.next
             return
-    
-    
+
+    def remove_end_node(self):
+        current_node = self.head
+        prev_node = None
+        while current_node.next:
+            prev_node = current_node
+            current_node = current_node.next
+        prev_node.next = None
+        return
+
 
 ll = LinkedList()
 ll.insertAtbeg(5)
 ll.insertAtbeg(6)
 ll.insertAtEnd(8)
+ll.insertAtEnd(10)
+ll.insertAtEnd(11)
+ll.insertAtEnd(12)
 ll.insertAtPos(9, 2)
 ll.search(6)
 ll.search(8)
@@ -91,4 +102,6 @@ ll.printLL()
 ll.remove_node(5)
 ll.printLL()
 ll.remove_first_node()
+ll.printLL()
+ll.remove_end_node()
 ll.printLL()
