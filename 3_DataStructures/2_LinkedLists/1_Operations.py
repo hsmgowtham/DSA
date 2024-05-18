@@ -86,6 +86,21 @@ class LinkedList:
             current_node = current_node.next
         prev_node.next = None
         return
+    
+    def remove_node_at_pos(self, pos):
+        current_node = self.head
+        prev_node = None
+        c = 1
+        if pos == 1:
+            self.head = self.head.next
+            return 
+        
+        while pos != c:
+            prev_node = current_node
+            current_node = current_node.next
+            c += 1
+        prev_node.next = current_node.next
+        return
 
 
 ll = LinkedList()
@@ -104,4 +119,6 @@ ll.printLL()
 ll.remove_first_node()
 ll.printLL()
 ll.remove_end_node()
+ll.printLL()
+ll.remove_node_at_pos(3)
 ll.printLL()
