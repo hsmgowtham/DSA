@@ -86,15 +86,15 @@ class LinkedList:
             current_node = current_node.next
         prev_node.next = None
         return
-    
+
     def remove_node_at_pos(self, pos):
         current_node = self.head
         prev_node = None
         c = 1
         if pos == 1:
             self.head = self.head.next
-            return 
-        
+            return
+
         while pos != c:
             prev_node = current_node
             current_node = current_node.next
@@ -104,21 +104,34 @@ class LinkedList:
 
 
 ll = LinkedList()
+print("--- Insert At Beg 5 ---")
 ll.insertAtbeg(5)
+ll.printLL()
+print("--- Insert At Beg 6 ---")
 ll.insertAtbeg(6)
+ll.printLL()
+print("--- Insert At End 8,10,11,12 ---")
 ll.insertAtEnd(8)
 ll.insertAtEnd(10)
 ll.insertAtEnd(11)
 ll.insertAtEnd(12)
-ll.insertAtPos(9, 2)
-ll.search(6)
-ll.search(8)
 ll.printLL()
+print("--- Insert At Pos 2 = 9 ---")
+ll.insertAtPos(9, 2)
+ll.printLL()
+print("--- Search 6 ---")
+ll.search(6)
+print("--- Search 8 ---")
+ll.search(8)
+print("--- Remove Node with data 5 ---")
 ll.remove_node(5)
 ll.printLL()
+print("--- Remove First Node ---")
 ll.remove_first_node()
 ll.printLL()
+print("--- Remove Last Node ---")
 ll.remove_end_node()
 ll.printLL()
+print("--- Remove Node At pos 3 ---")
 ll.remove_node_at_pos(3)
 ll.printLL()
