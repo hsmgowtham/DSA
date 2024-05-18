@@ -36,11 +36,24 @@ class LinkedList:
         current_node.next = new_node
         return
 
+    def search(self, data):
+        pos = 1
+        current_node = self.head
+        while current_node.data != data:
+            current_node = current_node.next
+            pos += 1
+        else:
+            if current_node.data == data:
+                print(f"Found at Index {pos}")
+            else:
+                print("Given Data Not Found")
+
     def printLL(self):
         current_node = self.head
         while current_node:
             print(current_node.data, end=" -> ")
             current_node = current_node.next
+        print()
 
 
 ll = LinkedList()
@@ -48,4 +61,6 @@ ll.insertAtbeg(5)
 ll.insertAtbeg(6)
 ll.insertAtEnd(8)
 ll.insertAtPos(9, 2)
+ll.search(6)
+ll.search(8)
 ll.printLL()
