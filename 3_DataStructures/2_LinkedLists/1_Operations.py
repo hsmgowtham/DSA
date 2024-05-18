@@ -18,12 +18,16 @@ class LinkedList:
             self.head = new_node
 
     def insertAtEnd(self, data):
-        new_node = Node(data)
-        current_node = self.head
-        while current_node.next:
-            current_node = current_node.next
-        current_node.next = new_node
-        return
+        if self.head is None:
+            self.head = new_node
+            return
+        else:
+            new_node = Node(data)
+            current_node = self.head
+            while current_node.next:
+                current_node = current_node.next
+            current_node.next = new_node
+            return
 
     def insertAtPos(self, data, pos):
         new_node = Node(data)
@@ -55,6 +59,21 @@ class LinkedList:
             current_node = current_node.next
         print()
 
+    def remove_node(self, data):
+        if self.head.data == data:
+            self.head = self.head.next
+            return
+
+        current_node = self.head
+        prev_node = None
+        
+        while current_node.data != data:
+            prev_node = current_node
+            current_node = current_node.next
+        prev_node.next = current_node.next
+        return
+
+
 
 ll = LinkedList()
 ll.insertAtbeg(5)
@@ -63,4 +82,6 @@ ll.insertAtEnd(8)
 ll.insertAtPos(9, 2)
 ll.search(6)
 ll.search(8)
+ll.printLL()
+ll.remove_node(5)
 ll.printLL()
