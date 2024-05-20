@@ -30,7 +30,20 @@ class DoublyLL:
         new_node.pre = current_node
         return
     
-    
+    def insertAtPos(self, data, pos):
+        new_node = Node(data)
+        current_node = self.head
+        c = 1
+        prev_node = None
+        while pos != c:
+            prev_node = current_node
+            current_node = current_node.next
+            c += 1
+        prev_node.next = new_node
+        new_node.pre = prev_node
+        new_node.next = current_node
+        current_node.pre = new_node
+        return
             
     
     def printLL(self):
