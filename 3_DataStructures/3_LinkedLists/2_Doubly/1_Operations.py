@@ -3,6 +3,11 @@ class Node:
         self.pre = prev_node
         self.data = data
         self.next = None
+    
+    def __str__(self):
+        prev_data = self.pre.data if self.pre else "None"
+        next_data = self.next.data if self.next else "None"
+        return f"|{prev_data}|N({self.data})|{next_data}|"
 
 
 class DoublyLL:
@@ -61,9 +66,17 @@ class DoublyLL:
     def printLL(self):
         current_node = self.head
         while current_node:
-            print(current_node.data, end=" -> ")
+            print(current_node, end=" -> ")
             current_node = current_node.next
         print()
+    
+    # def removeNode(self, data):
+    #     current_node = self.head
+    #     if self.head.data == data:
+    #         self.head = self.head.next
+    #         self.head.pre = None
+    #         return
+    #     while pos
 
 
 ll = DoublyLL()
