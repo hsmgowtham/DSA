@@ -70,13 +70,25 @@ class DoublyLL:
             current_node = current_node.next
         print()
     
-    # def removeNode(self, data):
-    #     current_node = self.head
-    #     if self.head.data == data:
-    #         self.head = self.head.next
-    #         self.head.pre = None
-    #         return
-    #     while pos
+    def removeNode(self, data):
+        prev_node = None
+        next_node = None
+        current_node = self.head
+        if self.head.data == data:
+            self.head = self.head.next
+            self.head.pre = None
+            return
+        while current_node.data != data:
+            prev_node = current_node
+            current_node = current_node.next
+            if current_node.next:
+                next_node = current_node.next
+            else:
+                next_node = None
+        prev_node.next = next_node
+        if next_node:
+            next_node.pre = prev_node
+        return
 
 
 ll = DoublyLL()
@@ -99,3 +111,10 @@ print("--- Search 6 ---")
 ll.search(6)
 print("--- Search 8 ---")
 ll.search(8)
+ll.printLL()
+print("--- Remove Node with data 9 ---")
+ll.removeNode(9)
+ll.printLL()
+print("--- Remove Node with data 12 ---")
+ll.removeNode(12)
+ll.printLL()
