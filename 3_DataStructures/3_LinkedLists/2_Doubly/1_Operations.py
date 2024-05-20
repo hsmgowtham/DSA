@@ -18,6 +18,21 @@ class DoublyLL:
         self.head = new_node
         return
     
+    def insertAtEnd(self, data):
+        new_node = Node(data=data)
+        current_node = self.head
+        if not self.head:
+            self.head = new_node
+            return
+        while current_node.next:
+            current_node = current_node.next
+        current_node.next = new_node
+        new_node.pre = current_node
+        return
+    
+    
+            
+    
     def printLL(self):
         current_node = self.head
         while current_node:
@@ -31,4 +46,13 @@ ll.insertAtBeg(5)
 ll.printLL()
 print("--- Insert At Beg 6 ---")
 ll.insertAtBeg(6)
+ll.printLL()
+print("--- Insert At End 8,10,11,12 ---")
+ll.insertAtEnd(8)
+ll.insertAtEnd(10)
+ll.insertAtEnd(11)
+ll.insertAtEnd(12)
+ll.printLL()
+print("--- Insert At Pos 2 = 9 ---")
+ll.insertAtPos(9, 2)
 ll.printLL()
