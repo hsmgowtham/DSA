@@ -89,12 +89,12 @@ class DoublyLL:
         if next_node:
             next_node.pre = prev_node
         return
-    
+
     def removeFirstNode(self):
         self.head = self.head.next
         self.head.pre = None
         return
-    
+
     def removeLastNode(self):
         current_node = self.head
         prev_node = None
@@ -106,7 +106,27 @@ class DoublyLL:
         prev_node.next = None
         return
 
-
+    def removeNodeAtPos(self, pos):
+        c = 1
+        prev_node = None
+        next_node = None
+        current_node = self.head
+        if pos == c:
+            self.head = self.head.next
+            self.head.pre = None
+            return
+        while pos != c:
+            prev_node = current_node
+            current_node = current_node.next
+            if current_node.next:
+                next_node = current_node.next
+            else:
+                next_node = None
+            c += 1
+        prev_node.next = next_node
+        if next_node:
+            next_node.pre = prev_node
+        return
 
 
 ll = DoublyLL()
@@ -138,4 +158,7 @@ ll.removeNode(12)
 ll.printLL()
 print("--- Remove Last Node ---")
 ll.removeLastNode()
+ll.printLL()
+print("--- Remove Node At pos 3 ---")
+ll.removeNodeAtPos(3)
 ll.printLL()
