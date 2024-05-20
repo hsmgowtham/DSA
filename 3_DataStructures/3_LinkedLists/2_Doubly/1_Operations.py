@@ -3,7 +3,7 @@ class Node:
         self.pre = prev_node
         self.data = data
         self.next = None
-    
+
     def __str__(self):
         prev_data = self.pre.data if self.pre else "None"
         next_data = self.next.data if self.next else "None"
@@ -69,7 +69,7 @@ class DoublyLL:
             print(current_node, end=" -> ")
             current_node = current_node.next
         print()
-    
+
     def removeNode(self, data):
         prev_node = None
         next_node = None
