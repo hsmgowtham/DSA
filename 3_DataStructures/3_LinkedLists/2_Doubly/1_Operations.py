@@ -128,6 +128,18 @@ class DoublyLL:
             next_node.pre = prev_node
         return
 
+    def revereLL(self):
+        if self.head is None or self.head.next is None:
+            return self.head
+        current_node = self.head
+        prev = None
+        while current_node is not None:
+            prev = current_node.pre
+            current_node.pre = current_node.next
+            current_node.next = prev
+            current_node = current_node.pre
+        self.head = prev.pre
+
 
 ll = DoublyLL()
 print("--- Insert At Beg 5 ---")
@@ -161,4 +173,7 @@ ll.removeLastNode()
 ll.printLL()
 print("--- Remove Node At pos 3 ---")
 ll.removeNodeAtPos(3)
+ll.printLL()
+print("--- Reverse LL ---")
+ll.revereLL()
 ll.printLL()
