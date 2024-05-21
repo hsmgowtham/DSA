@@ -2,6 +2,7 @@
 Bubble Sort Algorithm (Swap Adjacent):
 ------------------------
 - Compares adjacent elements and swaps them if they're in the wrong order.
+- it pushes the greatest element to last by comparing adjacent elements from starting and in each iteration the range reduces by one from last
 - Repeats this process until the list is sorted.
 - Time complexity: O(n^2) in the worst and average cases, O(n) in the best case (if the list is already sorted).
 - Space complexity: O(1) as it requires only a constant amount of additional space.
