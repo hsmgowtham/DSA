@@ -23,9 +23,13 @@ class Stack:
 
     def pop(self):
         if self.head:
+            pop_node = self.head
             if self.head.next:
                 self.head = self.head.next
-                return
+            else:
+                self.head = None
+            return pop_node.data
+
         raise Exception("Error: No Nodes Left to pop")
 
     def peek(self):
@@ -44,12 +48,12 @@ s.push(1)
 s.push(2)
 s.push(3)
 s.printStack()
-s.pop()
+print("Popped Node: ", s.pop())
 s.printStack()
 s.peek()
-s.pop()
+print("Popped Node: ", s.pop())
 s.printStack()
-s.pop()
+print("Popped Node: ", s.pop())
 s.printStack()
-s.pop()
+print("Popped Node: ", s.pop())
 s.printStack()
