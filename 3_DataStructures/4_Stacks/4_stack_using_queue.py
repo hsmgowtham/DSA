@@ -12,7 +12,7 @@ class Stack:
         self.q.put(x)
 
         for i in range(s):
-            # get last elements inserted and put them in first
+            # self.get removes first element from the queue and we are insert elements at the last of queue 
             # so that the first element go to last, which becomes stack
             self.q.put(self.q.get())
 
