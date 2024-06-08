@@ -49,7 +49,7 @@ def postfixToPrefix(string):
         else:
             op1 = st.pop()
             op2 = st.pop()
-            res =  "(" + op2 + string[i] + op1 + ")"
+            res = "(" + op2 + string[i] + op1 + ")"
             st.push(res)
     return st.pop()
 
