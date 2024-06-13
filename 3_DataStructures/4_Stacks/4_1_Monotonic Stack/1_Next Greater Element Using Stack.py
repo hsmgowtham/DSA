@@ -7,7 +7,7 @@ class Solution:
         nge = [-1] * n
         st = []
 
-        for i in range(2 * n - 1, -1, -1):
+        for i in range(n - 1, -1, -1):
             while st and st[-1] <= nums[i % n]:
                 st.pop()
 
