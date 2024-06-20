@@ -69,6 +69,39 @@ def trappedwater2(arr):
     return water_trapped
 
 
+"""
+Algo 3:
+- for finding leftmax and right max of each element we compute and store prefixmax and suffixmax
+    and then for each element we add min(prefixmax[i], suffixmax[i]) - arr[i] as trapped water
+
+TC: O(N) - as we are using 2 pointer approach
+SC: O(1) - no extra space
+"""
+
+
+def trappedwater3(arr):
+    water_trapped = 0
+    left = 0
+    right = len(arr) - 1
+    leftmax = 0
+    rightmax = 0
+
+    while left <= right:
+        if arr[left] <= arr[right]:
+            if arr[left] >= leftmax:
+                leftmax = arr[left]
+            else:
+                water_trapped += leftmax - arr[left]
+            left += 1
+        else:
+            if arr[right] >= rightmax:
+                rightmax = arr[right]
+            else:
+                water_trapped += rightmax - arr[right]
+            right -= 1
+    return water_trapped
+
+
 arr = [0, 1, 0, 2, 1, 0, 1, 3, 2, 1, 2, 1]
 
 # Algo 1
@@ -76,3 +109,6 @@ print(trappedwater1(arr))
 
 # Algo 2
 print(trappedwater2(arr))
+
+# Algo 3
+print(trappedwater3(arr))
