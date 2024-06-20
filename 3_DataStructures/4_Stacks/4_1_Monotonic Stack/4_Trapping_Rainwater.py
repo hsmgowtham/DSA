@@ -6,7 +6,9 @@ Input: height= [0,1,0,2,1,0,1,3,2,1,2,1]
 Output: 6
 https://takeuforward.org/data-structure/trapping-rainwater/
 https://leetcode.com/problems/trapping-rain-water/description/
+"""
 
+"""
 Algo 1:
 for each ele pos find left max and right max and add min(leftmax, rightmax) - ele as trapped water
 
@@ -36,7 +38,41 @@ def trappedwater1(arr):
     return water_trapped
 
 
+"""
+Algo 2:
+- for finding leftmax and right max of each element we compute and store prefixmax and suffixmax
+    and then for each element we add min(prefixmax[i], suffixmax[i]) - arr[i] as trapped water
+
+TC: O(N) + O(N) + O(N) = O(N)
+SC: O(3N)
+"""
+
+
+def trappedwater2(arr):
+    water_trapped = 0
+    size = len(arr)
+    prefixmax = [0] * size
+    suffixmax = [0] * size
+
+    # prefixmax
+    prefixmax[0] = arr[0]
+    for i in range(1, size):
+        prefixmax[i] = max(prefixmax[i - 1], arr[i])
+
+    # suffixmax
+    suffixmax[size - 1] = arr[size - 1]
+    for i in range(size - 2, -1, -1):
+        suffixmax[i] = max(suffixmax[i + 1], arr[i])
+
+    for i in range(size):
+        water_trapped += min(prefixmax[i], suffixmax[i]) - arr[i]
+    return water_trapped
+
+
 arr = [0, 1, 0, 2, 1, 0, 1, 3, 2, 1, 2, 1]
 
 # Algo 1
 print(trappedwater1(arr))
+
+# Algo 2
+print(trappedwater2(arr))
