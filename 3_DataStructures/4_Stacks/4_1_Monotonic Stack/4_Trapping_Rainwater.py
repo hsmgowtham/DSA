@@ -10,7 +10,7 @@ https://leetcode.com/problems/trapping-rain-water/description/
 
 """
 Algo 1:
-for each ele pos find left max and right max and add min(leftmax, rightmax) - ele as trapped water
+for each ele pos find left max and right max and add min(leftmax, rightmax) - element as trapped water
 
 TC: O(N*N) as for each index we are calculating leftMax and rightMax so it is a nested loop.
 SC: O(1)
